@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryTreeNode.cs" />
+    <Compile Include="BinrayTree.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NodeString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

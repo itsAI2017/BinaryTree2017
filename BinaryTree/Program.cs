@@ -8,8 +8,22 @@ namespace BinaryTree
 {
     class Program
     {
+        public enum CHILDNODE { LEFT,RIGHT}
+
         static void Main(string[] args)
         {
+            BinaryTree<NodeString> t = new BinaryTree<NodeString>();
+
+            t.Root = new BinaryTreeNode<NodeString>(
+                new NodeString { ID = "a", val = 0 },
+                null,null);
+
+
         }
+        public void InsertAfter(NodeString node, BinaryTree<NodeString> tree)
+        {
+
+        }
+
     }
 }
