@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinaryTree
 {
-    class NodeString
+    public class NodeString
     {
         public string ID;
         public int val;
