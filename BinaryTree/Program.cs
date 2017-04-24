@@ -65,7 +65,7 @@ namespace BinaryTree
             visited.Push(t.Root);
             List<BinaryTreeNode<NodeString>> solutionPath = new List<BinaryTreeNode<NodeString>>();
 
-            BinaryTreeNode<NodeString> Goal = dfs(t.Root, visited, "g", solutionPath);
+            BinaryTreeNode<NodeString> Goal = bestfirst(t.Root, visited, "g", solutionPath);
 
             foreach (var item in solutionPath)
                 Console.WriteLine("Node {0} at a cost of {1} ", 
@@ -110,9 +110,11 @@ namespace BinaryTree
                     var neighbour = visited.Peek();
                     Console.WriteLine("backtracking into {0}", neighbour.Value.ID);
                     // if the neighbour to the right of the last node visited is worth looking at 
+                    if (neighbour.Right == null)
+                        solutionPath.Remove(neighbour);
+                    // pop the right and set it to current. If it's null we'll be popping again 
+                    // if there was a left then we wouldn't be here anyway
                     current = visited.Pop().Right;
-                    if (solutionPath.Count > 0)
-                        solutionPath.Remove(current);
                     current = bestfirst(current, visited, goal, solutionPath); // Continue regardless
                 }
                 else return null;
