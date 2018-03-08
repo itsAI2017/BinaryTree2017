@@ -241,6 +241,15 @@ namespace BinaryTree
             return current;
         }
 
+        private static BinaryTreeNode<NodeString> Hcompare(BinaryTreeNode<NodeString> left, BinaryTreeNode<NodeString> right)
+            {
+            if(Hnodes.Where(n =>n.ID == left.Value.ID).First().val 
+                    <= Hnodes.Where(n => n.ID == left.Value.ID).First().val)
+            {
+                return left;
+            }
+            return right;
+            }
         static public void traverseTree (BinaryTreeNode<NodeString> node)
         {
             if(node != null)
